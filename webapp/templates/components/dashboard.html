@@ -1,0 +1,74 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>
+
+        {% block title %}
+
+        {% endblock title %}
+
+    </title>
+
+
+    <link rel="shortcut icon" href="{% static 'images/logo.ico' %}" type="image/x-icon">
+
+    <!-- Tailwind Css -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+
+    <!-- Aos Transition -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+
+    <!-- Venobox -->
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/venobox/2.0.8/venobox.css"
+        integrity="sha512-DdJCxSEliAOOcwNXGOzXyBJIZ/K6KAv4OkrH46eBd7nOIbkOHoQPYrS6bbT53nsFWAYqE3/jNGGWH/3ELRgCnQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+
+</head>
+
+<body>
+
+    <div class="min-h-screen w-full flex flex-col gap-2 bg-gray-100">
+        {% include 'components/dashboard/navbar.html' %}
+        <div class="h-full w-full py-5 flex justify-center">
+            <div class="w-5/6 flex gap-2 min-h-screen p-5">
+                <div class="w-1/5 h-full flex flex-col gap-5">
+                    <a href="{% url 'dashboard' %}" class="hover:bg-violet-500 hover:text-white font-bold duration-700 text-lg p-2 border-2 rounded-lg">
+                       Dashboard
+                    </a>
+                    <a href="{% url 'order_index' %}" class="hover:bg-violet-500 hover:text-white font-bold duration-700 text-lg p-2 border-2 rounded-lg">
+                        Orders
+                    </a>
+                    <a href="{% url 'contact_index' %}" class="hover:bg-violet-500 hover:text-white font-bold duration-700 text-lg p-2 border-2 rounded-lg">
+                        Contact Inquiries
+                    </a>
+                    <!-- <a href="http://" class="hover:bg-violet-500 hover:text-white font-bold duration-700 text-lg p-2 border-2 rounded-lg">
+                        Users
+                    </a> -->
+                </div>
+                <div class="w-5/6 flex flex-col gap-2">
+                    {% block content %}
+
+                    {% endblock content %}
+                </div>
+            </div>
+        </div>
+        {% include 'components/footer.html' %}
+    </div>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/venobox/2.0.8/venobox.min.js"
+        integrity="sha512-RwADmV7VD+jDR+1KL6kzLn6mOXVju0tQ0BnxWgXe2MYgDbeFK+ErI9MZdhX5OshfFqAX/rS5nOdfPetPLj6Nyw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="{% static 'js/script.js' %}"></script>
+</body>
+
+</html>

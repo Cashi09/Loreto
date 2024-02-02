@@ -1,0 +1,54 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>
+
+        {% block title %}
+
+        {% endblock title %}
+
+    </title>
+
+
+    <link rel="shortcut icon" href="{% static 'images/logo.ico' %}" type="image/x-icon">
+
+    <!-- Tailwind Css -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+
+    <!-- Aos Transition -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+
+
+    <!-- Venobox -->
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/venobox/2.0.8/venobox.css" integrity="sha512-DdJCxSEliAOOcwNXGOzXyBJIZ/K6KAv4OkrH46eBd7nOIbkOHoQPYrS6bbT53nsFWAYqE3/jNGGWH/3ELRgCnQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.13.5/dist/cdn.min.js"></script>
+
+</head>
+
+<body>
+
+    <div class="min-h-screen w-full flex flex-col gap-2 bg-gray-100">
+        {% include 'components/navbar.html' %}
+        <div class="h-full w-full">
+            {% block content %}
+
+            {% endblock content %}
+        </div>
+        {% include 'components/footer.html' %}
+    </div>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/venobox/2.0.8/venobox.min.js" integrity="sha512-RwADmV7VD+jDR+1KL6kzLn6mOXVju0tQ0BnxWgXe2MYgDbeFK+ErI9MZdhX5OshfFqAX/rS5nOdfPetPLj6Nyw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="{% static 'js/script.js' %}"></script>
+</body>
+
+</html>

@@ -1,0 +1,80 @@
+{% extends 'components/master.html' %}
+
+
+
+
+{% block title %}
+    Login
+{% endblock title %}
+    
+
+
+
+{% block content %}
+<div class="min-h-screen flex items-center justify-center">
+    <form action="process_registration.php" method="post" class="w-96 p-4 rounded-lg shadow-lg bg-white">
+        <h1 class="text-4xl font-bold tracking-widest text-center mb-6">Register</h1>
+
+        <!-- Username Input (Required) -->
+        <div class="flex flex-col mb-4">
+            <label for="username" class="text-sm text-gray-500 capitalize">Username</label>
+            <input type="text" id="username" name="username" class="w-full bg-gray-100 rounded-lg border border-violet-500 p-2" placeholder="Enter your username" required>
+            <!-- Sample Username -->
+            <small class="text-gray-500">Sample: john_doe</small>
+        </div>
+
+        <!-- Screen name Input (Optional) -->
+        <div class="flex flex-col mb-4">
+            <label for="screenName" class="text-sm text-gray-500 capitalize">Screen Name</label>
+            <input type="text" id="screenName" name="screenName" class="w-full bg-gray-100 rounded-lg border border-violet-500 p-2" placeholder="Enter your screen name">
+        </div>
+
+        <!-- Email Input (Required) -->
+        <div class="flex flex-col mb-4">
+            <label for="email" class="text-sm text-gray-500 capitalize">Email</label>
+            <input type="email" id="email" name="email" class="w-full bg-gray-100 rounded-lg border border-violet-500 p-2" placeholder="Enter your email" required>
+            <!-- Sample Email -->
+            <small class="text-gray-500">Sample: user@example.com</small>
+        </div>
+
+        <!-- Password Input (Required) -->
+        <div class="flex flex-col mb-4 relative">
+            <label for="password" class="text-sm text-gray-500 capitalize">Password</label>
+            <input type="password" id="password" name="password" class="w-full bg-gray-100 rounded-lg border border-violet-500 p-2 pr-10" placeholder="Enter your password" required>
+            <!-- Sample Password -->
+            <small class="text-gray-500">Sample: Qwerty_09</small>
+        </div>
+
+        <!-- Confirm Password Input (Required) -->
+        <div class="flex flex-col mb-4">
+            <label for="confirmPassword" class="text-sm text-gray-500 capitalize">Confirm Password</label>
+            <input type="password" id="confirmPassword" name="confirmPassword" class="w-full bg-gray-100 rounded-lg border border-violet-500 p-2" placeholder="Confirm your password" required>
+        </div>
+
+        <!-- Dropdown list Input if they're a client (Optional) -->
+        <div class="flex flex-col mb-4">
+            <label for="clientType" class="text-sm text-gray-500 capitalize">Client Type</label>
+            <select id="clientType" name="clientType" class="w-full bg-gray-100 rounded-lg border border-violet-500 p-2">
+                <option value="individual">Individual</option>
+                <option value="company">Company</option>
+            </select>
+        </div>
+
+        <!-- Picture Upload Input (To be added) -->
+        <div class="flex flex-col mb-4">
+            <label for="profilePicture" class="text-sm text-gray-500 capitalize">Profile Picture</label>
+            <input type="file" id="profilePicture" name="profilePicture" accept="image/*" class="w-full bg-gray-100 rounded-lg border border-violet-500 p-2">
+        </div>
+
+        <!-- Register Button -->
+        <button type="submit" class="p-2 text-center bg-violet-200 hover:bg-violet-400 duration-200 rounded-lg text-gray-800 hover:text-white">
+            Register
+        </button>
+    </form>
+</div>
+
+
+{% endblock content %}
+
+    
+

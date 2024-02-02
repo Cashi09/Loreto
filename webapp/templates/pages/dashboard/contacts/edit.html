@@ -1,0 +1,50 @@
+{% extends 'components/dashboard.html' %}
+
+
+
+{% block title %}
+dashboard
+{% endblock title %}
+
+
+
+
+{% block content %}
+
+<form method="POST" action="{% url 'contact_edit' contact.id %}" class="relative overflow-x-auto shadow-md sm:rounded-lg min-h-[10rem] max-h-[50rem]">
+    <h1 class="text-2xl p-2 text-violet-500 font-bold">Contacts - {{ contact.name }}</h1>
+    {% csrf_token %}
+    <div class="flex flex-col gap-5">
+        <div class="flex flex-col gap-2">
+            <p>Name</p>
+            <h1 class="text-lg font-bold">{{contact.name}}</h1>
+            <div class="mb-6">
+                <input type="text" id="default-input" name="contact_name" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg 
+                focus:ring-violet-500 focus:border-violet-500 block w-full p-2.5 ">
+            </div>
+        </div>
+        <div class="flex flex-col gap-2">
+            <p>Email</p>
+            <h1 class="text-lg font-bold">{{contact.email}}</h1>
+            <div class="mb-6">
+                <input type="email" id="default-input" name="contact_email" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg 
+                focus:ring-violet-500 focus:border-violet-500 block w-full p-2.5 ">
+            </div>
+        </div>
+        <div class="flex flex-col gap-2">
+            <p>message</p>
+            <h1 class="text-lg font-bold">{{contact.message}}</h1>
+            <div class="mb-6">
+                <input type="text" id="default-input" name="contact_message" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg 
+                focus:ring-violet-500 focus:border-violet-500 block w-full p-2.5 ">
+            </div>
+        </div>
+
+        <button class="py-2 px-4 bg-violet-500 rounded-lg text-white">
+            Submit
+        </button>
+    </div>
+</form>
+
+</div>
+{% endblock content %}

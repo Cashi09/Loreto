@@ -1,0 +1,35 @@
+{% extends 'components/dashboard.html' %}
+
+
+
+{% block title %}
+dashboard
+{% endblock title %}
+
+
+
+
+{% block content %}
+
+<div class="relative shadow-md sm:rounded-lg h-auto flex flex-col gap-2">
+    <div class="flex items-center gap-2 justify-between">
+        <div class="flex items-center gap-2">
+            <a href="{% url 'order_show' order.id %}" class="focus:outline-none text-white bg-sky-700 hover:bg-sky-800 focus:ring-4
+            focus:ring-red-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2
+             ">Back</a>
+            <h1 class="text-2xl text-sky-500 font-bold flex items-center">Order - {{ order.client }}</h1>
+        </div>
+   
+      
+    </div>
+    
+    <form method="POST" action="{% url 'order_edit' order.id %}" class="flex flex-col gap-5 bg-gray-50  rounded-lg p-2">
+        {% csrf_token %}
+        {{orderForm}}
+      
+       <button class="py-2 px-4 rounded-lg bg-sky-500">Submit</button>
+    </form>
+</div>
+
+</div>
+{% endblock content %}

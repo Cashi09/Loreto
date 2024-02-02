@@ -1,0 +1,51 @@
+{% extends 'components/dashboard.html' %}
+
+
+
+{% block title %}
+dashboard
+{% endblock title %}
+
+
+
+
+{% block content %}
+
+<div class="relative overflow-x-auto shadow-md sm:rounded-lg min-h-[10rem] max-h-[20rem] flex flex-col gap-2">
+    <div class="flex items-center gap-2 justify-between">
+        <div class="flex items-center gap-2">
+            <a href="{% url 'contact_index' %}" class="focus:outline-none text-white bg-sky-700 hover:bg-sky-800 focus:ring-4
+            focus:ring-red-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2
+             ">Back</a>
+            <h1 class="text-2xl text-sky-500 font-bold flex items-center">Contacts - {{ contact.name }}</h1>
+        </div>
+      <div class="flex items-center gap-2">
+        <a href="{% url 'contact_edit' contact.id %}" class="focus:outline-none text-white bg-sky-500 hover:bg-sky-600 focus:ring-4
+        focus:ring-sky-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2
+         ">Edit</a>
+         <a href="{% url 'contact_delete' contact.id %}" class="focus:outline-none text-white bg-red-700 hover:bg-viskyolet-800 focus:ring-4
+         focus:ring-red-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2
+          ">Delete</a>
+      </div>
+      
+
+    </div>
+    
+    <div class="flex flex-col gap-5 bg-white  rounded-lg p-2">
+        <div class="flex flex-col gap-2">
+            <p>Name</p>
+            <h1 class="text-lg font-bold">{{contact.name}}</h1>
+        </div>
+        <div class="flex flex-col gap-2">
+            <p>Email</p>
+            <h1 class="text-lg font-bold">{{contact.email}}</h1>
+        </div>
+        <div class="flex flex-col gap-2">
+            <p>message</p>
+            <h1 class="text-lg font-bold">{{contact.message}}</h1>
+        </div>
+    </div>
+</div>
+
+</div>
+{% endblock content %}

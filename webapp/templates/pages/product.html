@@ -1,0 +1,219 @@
+{% extends 'components/master.html' %}
+
+{% load static %}
+
+{% block title %}
+Product
+{% endblock title %}
+
+{% block content %}
+<div class="flex flex-col gap-2 min-h-screen h-auto w-full">
+    <div class="h-100 bg-gray-200 w-full flex justify-center">
+        <img src="https://media.licdn.com/dms/image/D562DAQG9KQpbPwsveQ/profile-treasury-image-shrink_800_800/0/1706442936372?e=1707048000&v=beta&t=52AKV3twNS2V2GMpYF6ULjbfY1g0Kx4J8_AzE5w70pg"
+            alt="" srcset="" class="h-5/6 w-6/6 object object-cover">
+    </div>
+    <div class="w-full flex justify-center h-full" x-data"formData">
+        <div class="w-5/6 h-full flex flex-col gap-2">
+            <div class="flex justify-between items-center">
+                <h1 class="text-lg font-bold py-2">Order Form</h1>
+                <button class="bg-violet-200 rounded-lg py-2 px-2">Submit</button>
+            </div>
+
+            <div class="grid grid-cols-12 grid-flow-row gap-2 w-full full">
+                <h1 class="bg-yellow-200 w-full h-16 flex justify-center items-center">
+                    <span class="font-bold text-lg capitalize">
+                        PO No.
+                    </span>
+                </h1>
+                <h1 class="bg-violet-200 w-full h-16 flex justify-center items-center">
+                    <span class="font-bold text-lg capitalize">
+                        JDY CODE#
+
+                    </span>
+                </h1>
+                <h1 class="bg-violet-200 w-full h-16 flex justify-center items-center">
+                    <span class="font-bold text-lg capitalize">
+                        FTY ITEM #
+                    </span>
+                </h1>
+                <h1 class="bg-violet-200 w-full h-16 flex justify-center items-center">
+                    <span class="font-bold text-lg capitalize">
+                        ITEM DESC.
+                    </span>
+                </h1>
+                <h1 class="bg-violet-200 w-full h-16 flex justify-center items-center">
+                    <span class="font-bold text-lg capitalize">
+                        QTY/CTN
+                    </span>
+                </h1>
+                <h1 class="bg-violet-200 w-full h-16 flex justify-center items-center">
+                    <span class="font-bold text-lg capitalize">
+                        Total CTN 5
+                    </span>
+                </h1>
+                <h1 class="bg-violet-200 w-full h-16 flex justify-center items-center">
+                    <span class="font-bold text-lg capitalize">
+                        Length
+                    </span>
+                </h1>
+
+                <h1 class="bg-violet-200 w-full h-16 flex justify-center items-center">
+                    <span class="font-bold text-lg capitalize">
+                        Width
+                    </span>
+                </h1>
+                <h1 class="bg-violet-200 w-full h-16 flex justify-center items-center">
+                    <span class="font-bold text-lg capitalize">
+                        Height
+                    </span>
+                </h1>
+                <h1 class="bg-violet-200 w-full h-16 flex justify-center items-center">
+                    <span class="font-bold text-lg capitalize">
+                        Weight
+                    </span>
+                </h1>
+                <h1 class="bg-violet-200 w-full h-16 flex justify-center items-center">
+                    <span class="font-bold text-lg capitalize">
+                        CTN PO QTY
+                    </span>
+                </h1>
+                <h1 class="bg-violet-200 w-full h-16 flex justify-center items-center">
+                    <span class="font-bold text-lg capitalize">
+                        Client
+                    </span>
+                </h1>
+            </div>
+
+
+            {% for order in orders %}
+            <div class="grid grid-cols-12 grid-flow-row gap-2 w-full full">
+
+
+                <h1 class="w-full h-16 flex justify-center items-center border-2 border-gray-200 rounded-lg">
+                    <span class="font-bold text-lg capitalize">
+                        {{order.po_number}}
+                    </span>
+                </h1>
+
+                <h1 class="w-full h-16 flex justify-center items-center border-2 border-gray-200 rounded-lg">
+                    <span class="font-bold text-lg capitalize">
+                        {{order.jdy_code_number}}
+                    </span>
+                </h1>
+                <h1 class="w-full h-16 flex justify-center items-center border-2 border-gray-200 rounded-lg">
+                    <span class="font-bold text-lg capitalize">
+                        {{order.fty_item_number }}
+                    </span>
+                </h1>
+                <h1 class="w-full h-16 flex justify-center items-center border-2 border-gray-200 rounded-lg">
+                    <span class="font-bold text-lg capitalize">
+                        {{order.item_description}}
+                    </span>
+                </h1>
+                <h1 class="w-full h-16 flex justify-center items-center border-2 border-gray-200 rounded-lg">
+                    <span class="font-bold text-lg capitalize">
+                        {{order.qty_per_carton }}
+                    </span>
+                </h1>
+                <h1 class="w-full h-16 flex justify-center items-center border-2 border-gray-200 rounded-lg">
+                    <span class="font-bold text-lg capitalize">
+                        {{order.total_carton_order }}
+                    </span>
+                </h1>
+                <h1 class="w-full h-16 flex justify-center items-center border-2 border-gray-200 rounded-lg">
+                    <span class="font-bold text-lg capitalize">
+                        {{order.size_length }}"
+                    </span>
+                </h1>
+                <h1 class="w-full h-16 flex justify-center items-center border-2 border-gray-200 rounded-lg">
+                    <span class="font-bold text-lg capitalize">
+                        {{order.size_width }}""
+                    </span>
+                </h1>
+                <h1 class="w-full h-16 flex justify-center items-center border-2 border-gray-200 rounded-lg">
+                    <span class="font-bold text-lg capitalize">
+                        {{order.size_height}}
+                    </span>
+                </h1>
+                <h1 class="w-full h-16 flex justify-center items-center border-2 border-gray-200 rounded-lg">
+                    <span class="font-bold text-lg capitalize">
+                        {{order.size_unit}}
+                    </span>
+                </h1>
+                <h1 class="w-full h-16 flex justify-center items-center border-2 border-gray-200 rounded-lg">
+                    <span class="font-bold text-lg capitalize">
+                        {{order.weight}}
+                    </span>
+                </h1>
+                <h1 class="w-full h-16 flex justify-center items-center border-2 border-gray-200 rounded-lg">
+                    <span class="font-bold text-xs capitalize">
+                        {{order.client}}
+                    </span>
+                </h1>
+            </div>
+            {% endfor %}
+
+
+            {% if request.user.is_authenticated %}
+
+            <div>
+                <button class="bg-violet-200 hover:bg-violet-500 duration-700 px-2 py-2 rounded-lg"
+                    @click="toggle = !toggle">+ Add Row</button>
+            </div>
+
+
+            <div class="w-full h-auto" x-show="toggle">
+                <form action="{% url 'save_client' %}" method="POST"
+                    class="w-full flex flex-col gap-2 bg-violet-100 p-2 rounded-lg shadow-lg">
+                    {% csrf_token %}
+                    <h1 class="text-2xl font-bold text-violet-600">
+                        Client Form
+                    </h1>
+                    {{clientForm}}
+                    <button type="submit"
+                        class="text-white bg-violet-700 hover:bg-violet-800 focus:ring-4 focus:ring-violet-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 dark:bg-violet-600 dark:hover:bg-violet-700 focus:outline-none dark:focus:ring-violet-800">Submit</button>
+                </form>
+
+
+                <form action="{% url 'product' %}" method="POST"
+                    class="w-full flex flex-col gap-2 bg-violet-100 p-2 rounded-lg shadow-lg">
+                    <h1 class="text-2xl font-bold text-violet-600">
+                        Orders Customize Product forms
+                    </h1>
+
+                    {% if orderForm.errors %}
+
+                      
+                      <!-- {% for error in orderForm.errors %}
+                        <p class="text-red-500 text-xs">{{ error }}</p>
+                      {% endfor %} -->
+                        
+                    
+
+                    {% endif %}
+                    {% csrf_token %}
+                    {{ orderForm }}
+
+                   
+                    <!-- {{ form..label_tag }} {{ form.po_number }} -->
+                    <button type="submit"
+                        class="text-white bg-violet-700 hover:bg-violet-800 focus:ring-4 focus:ring-violet-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 dark:bg-violet-600 dark:hover:bg-violet-700 focus:outline-none dark:focus:ring-violet-800">Submit</button>
+                </form>
+
+                {% endif %}
+
+
+            </div>
+
+
+        </div>
+
+    </div>
+</div>
+
+<script>
+    const formData = () => ({
+        toggle: false
+    })
+</script>
+{% endblock content %}

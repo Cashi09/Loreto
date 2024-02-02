@@ -1,0 +1,135 @@
+{% extends 'components/dashboard.html' %}
+
+
+
+{% block title %}
+dashboard
+{% endblock title %}
+
+
+
+
+{% block content %}
+<div class="h-full w-full flex flex-col gap-2">
+    <div class="grid grid-cols-2 grid-flow-row h-32 gap-10">
+        <div class="bg-sky-500 rounded-lg shadow-lg h-full p-2 flex flex-col justify-between">
+            <h1 class="text-3xl text-white font-bold">Orders:</h1>
+            <p class="text-5xl text-white font-bold text-end pl-5 truncate">{{orderTotals}}</p>
+        </div>
+        <div class="bg-sky-700 rounded-lg shadow-lg h-full p-2 flex flex-col justify-between">
+            <h1 class="text-3xl text-white font-bold">Contacts Inquiries:</h1>
+            <p class="text-5xl text-white font-bold text-end pl-5 truncate">{{totalInquiries }}</p>
+        </div>
+        <!-- <div class="bg-sky-900 rounded-lg shadow-lg h-full p-2 flex flex-col justify-between">
+            <h1 class="text-3xl text-white font-bold">Users</h1>
+            <p class="text-5xl text-white font-bold text-end pl-5 truncate">123123131212312312313121313</p>
+        </div> -->
+    </div>
+
+
+    <div class="relative overflow-x-auto shadow-md sm:rounded-lg min-h-[10rem] max-h-[20rem]">
+        <h1 class="text-2xl p-2 text-sky-500 font-bold">Orders</h1>
+        <table class="w-full text-sm text-left rtl:text-right text-gray-500">
+            <thead class="text-xs text-gray-700 uppercase">
+                <tr>
+                    <th scope="col" class="px-6 py-3 bg-gray-50">
+                        Order Number
+                    </th>
+                    <th scope="col" class="px-6 py-3">
+                        JDY CODE #
+                    </th>
+                    <th scope="col" class="px-6 py-3 bg-gray-50">
+                        FTY DESC
+                    </th>
+                    <th scope="col" class="px-6 py-3">
+                        QTY/CTN
+                    </th>
+                    <th scope="col" class="px-6 py-3">
+                        Total CTN 5
+                    </th>
+                    <th scope="col" class="px-6 py-3">
+                        Length
+                    </th>
+                    <th scope="col" class="px-6 py-3">
+                        Width
+
+                    </th>
+                    <th scope="col" class="px-6 py-3">
+                        Height
+
+                    </th>
+                    <th scope="col" class="px-6 py-3">
+                        Weight
+                    </th>
+                    <th scope="col" class="px-6 py-3">
+                        CTN PO QTY
+                    </th>
+                    <th scope="col" class="px-6 py-3">
+                        Order Date
+                    </th>
+                    <th scope="col" class="px-6 py-3">
+                        Client
+                    </th>
+
+
+                </tr>
+            </thead>
+            <tbody>
+
+
+                {% for order in orders %}
+
+                <tr class="border-b border-gray-200 dark:border-gray-700">
+                    <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap bg-gray-50 ">
+                        {{order.po_number}}
+                    </th>
+                    <!-- <td class="px-6 py-4">
+                        {{ order.jdy_code_number }}
+                    </td> -->
+                    <td class="px-6 py-4 bg-gray-50 ">
+                        {{ order.fty_item_number }}
+                    </td>
+                    <td class="px-6 py-4">
+                        {{ order.item_description }}
+                    </td>
+                    <td class="px-6 py-4">
+                        {{ order.qty_per_carton }}
+                    </td>
+                    <td class="px-6 py-4">
+                        {{ order.total_carton_order }}
+                    </td>
+                    <td class="px-6 py-4">
+                        {{ order.size_length }}
+                    </td>
+                    <td class="px-6 py-4">
+                        {{ order.size_width }}
+                    </td>
+                    <td class="px-6 py-4">
+                        {{ order.size_height }}
+                    </td>
+                    <td class="px-6 py-4">
+                        {{ order.weight }}
+                    </td>
+                    <td class="px-6 py-4">
+                        {{ order.size_unit }}
+                    </td>
+                    <td class="px-6 py-4">
+                        {{ order.order_date }}
+                    </td>
+                   
+                    <td class="px-6 py-4">
+                        {{ order.client }}
+                    </td>
+                   
+                </tr>
+
+                {% endfor %}
+
+
+
+            </tbody>
+        </table>
+    </div>
+
+</div>
+{% endblock content %}

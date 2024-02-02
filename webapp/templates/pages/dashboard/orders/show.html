@@ -1,0 +1,83 @@
+{% extends 'components/dashboard.html' %}
+
+
+
+{% block title %}
+dashboard
+{% endblock title %}
+
+
+
+
+{% block content %}
+
+<div class="relative overflow-x-auto shadow-md sm:rounded-lg min-h-[10rem] max-h-[20rem] flex flex-col gap-2">
+    <div class="flex items-center gap-2 justify-between">
+        <div class="flex items-center gap-2">
+            <a href="{% url 'contact_index' %}" class="focus:outline-none text-white bg-sky-700 hover:bg-sky-800 focus:ring-4
+            focus:ring-red-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2
+             ">Back</a>
+            <h1 class="text-2xl text-blue-500 font-bold flex items-center">Order - {{ order.client }}</h1>
+        </div>
+      <div class="flex items-center gap-2">
+        <a href="{% url 'order_edit' order.id %}" class="focus:outline-none text-white bg-sky-500 hover:bg-sky-600 focus:ring-4
+        focus:ring-sky-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2
+         ">Edit</a>
+         <a href="{% url 'order_delete' order.id %}" class="focus:outline-none text-white bg-red-700 hover:bg-sky-800 focus:ring-4
+         focus:ring-red-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2
+          ">Delete</a>
+      </div>
+      
+
+    </div>
+    
+    <div class="grid grid-cols-4 grid-flow-row gap-2">
+        <div class="flex flex-col gap-2">
+            <p>PO #</p>
+            <h1 class="text-lg font-bold">{{order.po_number}}</h1>
+        </div>
+        <div class="flex flex-col gap-2">
+            <p>JDC #</p>
+            <h1 class="text-lg font-bold">{{order.jdy_code_number}}</h1>
+        </div>
+        <div class="flex flex-col gap-2">
+            <p>FTY</p>
+            <h1 class="text-lg font-bold">{{order.fty_item_number}}</h1>
+        </div>
+        <div class="flex flex-col gap-2">
+            <p>DESC</p>
+            <h1 class="text-lg font-bold">{{order.item_description}}</h1>
+        </div>
+        <div class="flex flex-col gap-2">
+            <p>QTY CTN</p>
+            <h1 class="text-lg font-bold">{{order.qty_per_carton}}</h1>
+        </div>
+        <div class="flex flex-col gap-2">
+            <p>TOTAL CTN</p>
+            <h1 class="text-lg font-bold">{{order.total_carton_order}}</h1>
+        </div>
+        <div class="flex flex-col gap-2">
+            <p>Length</p>
+            <h1 class="text-lg font-bold">{{order.size_length}}</h1>
+        </div>
+        <div class="flex flex-col gap-2">
+            <p>Width</p>
+            <h1 class="text-lg font-bold">{{order.size_width}}</h1>
+        </div>
+        <div class="flex flex-col gap-2">
+            <p>Height</p>
+            <h1 class="text-lg font-bold">{{order.size_height}}</h1>
+        </div>
+        <div class="flex flex-col gap-2">
+            <p>Weight</p>
+            <h1 class="text-lg font-bold">{{order.weight}}</h1>
+        </div>
+        <div class="flex flex-col gap-2">
+            <p>Client</p>
+            <h1 class="text-lg font-bold">{{order.client}}</h1>
+        </div>
+    </div>
+</div>
+
+</div>
+{% endblock content %}
